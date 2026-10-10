@@ -57,13 +57,28 @@
         <p class="eyebrow">OUR MEMORIES</p>
         <h2>Beberapa momen<br>yang kusimpan ❤️</h2>
       </div>
-      <div class="polaroids">
-        <figure class="photo p1"><div class="photo-placeholder">FOTO<br>01</div><figcaption>[Caption foto]</figcaption></figure>
-        <figure class="photo p2"><div class="photo-placeholder">FOTO<br>02</div><figcaption>[Caption foto]</figcaption></figure>
-        <figure class="photo p3"><div class="photo-placeholder">FOTO<br>03</div><figcaption>[Caption foto]</figcaption></figure>
-        <figure class="photo p4"><div class="photo-placeholder">FOTO<br>04</div><figcaption>[Caption foto]</figcaption></figure>
+      
+      <!-- Grid Gallery -->
+      <div class="gallery-grid">
+        <figure class="photo-card" data-src="" data-caption="Momen spesial pertama">
+          <div class="photo-placeholder">FOTO 01</div>
+          <figcaption>[Caption foto 1]</figcaption>
+        </figure>
+        <figure class="photo-card" data-src="" data-caption="Cerita lucu waktu itu">
+          <div class="photo-placeholder">FOTO 02</div>
+          <figcaption>[Caption foto 2]</figcaption>
+        </figure>
+        <figure class="photo-card" data-src="" data-caption="Jalan-jalan bareng">
+          <div class="photo-placeholder">FOTO 03</div>
+          <figcaption>[Caption foto 3]</figcaption>
+        </figure>
+        <figure class="photo-card" data-src="" data-caption="Momen favoritku">
+          <div class="photo-placeholder">FOTO 04</div>
+          <figcaption>[Caption foto 4]</figcaption>
+        </figure>
       </div>
-      <p class="hint">Nanti ganti kotak FOTO dengan foto kalian di folder <b>images</b>.</p>
+
+      <p class="hint">Klik foto untuk melihat ukuran penuh ✨</p>
       <button class="primary next">Ada 10 alasan →</button>
     </section>
 
@@ -185,7 +200,14 @@
       </audio>
     </div>
   </main>
-
+<!-- Modal Lightbox Preview Foto -->
+  <div id="imageModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <div class="modal-content-wrap">
+      <div id="modalImageContainer"></div>
+      <p id="modalCaption" class="modal-caption"></p>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

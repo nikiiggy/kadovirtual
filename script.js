@@ -164,3 +164,38 @@ setInterval(() => {
     setTimeout(() => h.remove(), 4200);
   }
 }, 900);
+
+// Modal Gallery Lightbox Logic
+const modal = document.getElementById("imageModal");
+const modalImgContainer = document.getElementById("modalImageContainer");
+const modalCaption = document.getElementById("modalCaption");
+const modalClose = document.querySelector(".modal-close");
+
+document.querySelectorAll(".photo-card").forEach((card) => {
+  card.addEventListener("click", () => {
+    const imgSrc = card.getAttribute("data-src");
+    const captionText = card.getAttribute("data-caption") || card.querySelector("figcaption")?.textContent;
+
+    // Jika ada gambar (src), tampilkan img. Jika belum, tampilkan placeholder.
+    if (imgSrc) {
+      modalImgContainer.innerHTML = `<img src="${imgSrc}" alt="Gallery Image">`;
+    } else {
+      const placeholderContent = card.querySelector(".photo-placeholder")?.outerHTML || "FOTO";
+      modalImgContainer.innerHTML = `<div style="width:100%; height:250px; display:grid; place-items:center;">${placeholderContent}</div>`;
+    }
+
+    modalCaption.textContent = captionText;
+    modal.classList.add("show");
+  });
+});
+
+// Tutup Modal saat tombol X atau area luar modal diklik
+if (modalClose) {
+  modalClose.addEventListener("click", () => modal.classList.remove("show"));
+}
+
+if (modal) {
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.classList.remove("show");
+  });
+}
