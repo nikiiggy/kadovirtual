@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,600;1,700&display=swap');
+
+:root{
+  --bg:#09070d; --card:#15111c; --text:#f8f3f7; --muted:#a69eaa;
+  --pink:#ff5c93; --rose:#ff8db2; --line:rgba(255,255,255,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#050407;color:var(--text);font-family:"DM Sans",sans-serif}
+body{overflow-x:hidden}
+button{font:inherit}
+.app{width:100%;max-width:520px;min-height:100svh;margin:auto;position:relative;background:
+radial-gradient(circle at 50% 0%,rgba(255,75,135,.12),transparent 35%),
+linear-gradient(180deg,#09070d,#0d0910 60%,#08060b)}
+.screen{min-height:100svh;padding:34px 22px 110px;display:none;position:relative;overflow:hidden}
+.screen.active{display:flex;flex-direction:column;animation:in .65s ease both}
+@keyframes in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.center{width:100%;margin:auto;text-align:center;position:relative;z-index:2}
+.tiny,.eyebrow,.chapter{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#c9a9b7;font-weight:700}
+.tiny{margin-bottom:28px}.eyebrow{margin:0 0 14px}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(58px,17vw,92px);line-height:.86;letter-spacing:-.06em;margin:0 0 22px}
+h1 em,h2 em{font-family:"Playfair Display",serif;font-weight:600;color:var(--rose)}
+h2{font-size:42px;line-height:1.02;letter-spacing:-.05em;margin-bottom:18px}
+h3{font-size:22px}
+p{line-height:1.7;color:var(--muted)}
+.muted{font-size:14px;max-width:300px;margin:0 auto 30px}
+.hint{font-size:10px;opacity:.55;margin-top:15px}
+.primary{position:relative;z-index:5;pointer-events:auto;border:0;border-radius:999px;background:var(--text);color:#120b11;padding:15px 22px;font-weight:700;min-height:50px;box-shadow:0 12px 35px rgba(255,255,255,.08);cursor:pointer;transition:.2s}
+.primary:active{transform:scale(.96)}
+.heart-orbit{width:150px;height:150px;border:1px solid rgba(255,141,178,.25);border-radius:50%;display:grid;place-items:center;margin:0 auto 35px;box-shadow:0 0 70px rgba(255,65,130,.12);animation:float 3s ease-in-out infinite}
+.heart-orbit span,.big-heart{font-size:65px;color:var(--pink);text-shadow:0 0 35px rgba(255,65,130,.65);animation:pulse 1.5s infinite}
+@keyframes float{50%{transform:translateY(-8px)}} @keyframes pulse{50%{transform:scale(1.08)}}
+.stars{position:absolute;inset:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:42px 42px;opacity:.08;z-index:0;pointer-events:none}.intro-content{position:relative;z-index:2}
+.section-head{margin-top:25px;margin-bottom:25px}
+.section-head p{font-size:14px}
+.timeline{border-left:1px solid rgba(255,255,255,.16);margin:10px 0 28px;padding-left:20px}
+.timeline article{position:relative;padding:0 0 28px}
+.timeline article>span{position:absolute;left:-36px;top:0;width:30px;height:30px;border:1px solid var(--pink);border-radius:50%;background:var(--bg);display:grid;place-items:center;font-size:9px;color:var(--rose)}
+.timeline small{font-size:9px;color:var(--rose);letter-spacing:.15em}.timeline h3{margin:5px 0 6px;font-size:20px}.timeline p{font-size:13px;margin:0}
+.polaroids{height:500px;position:relative;margin-bottom:20px}
+.photo{position:absolute;width:185px;background:#f7f3ed;padding:10px 10px 35px;color:#222;box-shadow:0 18px 45px rgba(0,0,0,.4)}
+.photo figcaption{font-family:"Playfair Display",serif;text-align:center;padding-top:8px;font-size:14px}
+.photo-placeholder{height:185px;background:linear-gradient(135deg,#3a2633,#17131c);display:grid;place-items:center;color:#8d7180;font-size:12px;letter-spacing:.15em;text-align:center}
+.p1{left:0;top:15px;transform:rotate(-7deg)}.p2{right:0;top:80px;transform:rotate(6deg)}.p3{left:18px;top:245px;transform:rotate(5deg)}.p4{right:12px;top:315px;transform:rotate(-5deg)}
+.reasons{display:grid;gap:8px;margin-bottom:25px}
+.reason{display:flex;align-items:center;gap:15px;background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:15px;color:var(--text);padding:14px;text-align:left;cursor:pointer}
+.reason b{font-size:10px;color:var(--rose);width:25px}.reason span{font-size:13px}.reason.special{border-color:rgba(255,92,147,.4);background:rgba(255,92,147,.08)}
+.game-card{margin:auto 0 25px;background:linear-gradient(145deg,#1b1421,#100c15);border:1px solid var(--line);border-radius:28px;padding:30px 20px;text-align:center;box-shadow:0 25px 70px rgba(0,0,0,.3)}
+.game-card h2{font-size:35px}.answers{display:grid;gap:10px;margin-top:25px}.answer{border:1px solid var(--line);background:#fff;color:#161017;border-radius:14px;padding:15px;font-weight:700;cursor:pointer}.game-result{min-height:25px;color:var(--rose);font-weight:700;margin:16px 0 0}
+.cake-wrap{height:220px;display:grid;place-items:center;position:relative;margin:10px 0}
+.cake{position:relative;margin-top:35px}.cake-body{width:190px;height:85px;border-radius:12px 12px 25px 25px;background:linear-gradient(#d99a9f,#9c526d);box-shadow:0 20px 40px rgba(255,50,120,.12)}.icing{position:absolute;z-index:2;width:200px;height:30px;background:#fff0f4;border-radius:20px 20px 10px 10px;top:-14px;left:-5px}.flame{font-size:38px;position:absolute;top:22px;z-index:3;animation:pulse .8s infinite}
+/* Container Amplop */
+.envelope {
+  width: 100%;
+  max-width: 340px;
+  height: 200px;
+  margin: 40px auto 25px;
+  position: relative;
+  background: #6a2741; /* Bagian dalam amplop */
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  perspective: 1000px;
+}
+
+/* Lidah Amplop Atas */
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  background: #a84e6e;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top;
+  transition: transform 0.5s ease 0.3s, z-index 0.2s ease 0.3s;
+  z-index: 4; /* Paling depan saat tertutup */
+}
+
+/* Kantong Depan Amplop */
+.pocket {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: #8e3a5a;
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+  border-radius: 0 0 12px 12px;
+  z-index: 3; /* Menutupi kertas surat saat di dalam */
+}
+
+/* Kertas Surat */
+.letter-paper {
+  position: absolute;
+  bottom: 10px;
+  left: 5%;
+  width: 90%;
+  height: 170px;
+  background: #fff7ef;
+  color: #2c1820;
+  padding: 16px;
+  text-align: left;
+  font-family: "Playfair Display", serif;
+  font-size: 11px;
+  line-height: 1.5;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  overflow-y: auto;
+  z-index: 2; /* Berada di dalam kantong */
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, z-index 0.1s ease 0.4s, height 0.5s ease;
+}
+
+.letter-paper p {
+  color: #2c1820;
+  margin-bottom: 8px;
+}
+
+/* ESENSI ANIMASI SAAT TERBUKA (.open) */
+
+/* 1. Lidah amplop membuka ke atas */
+.envelope.open .flap {
+  transform: rotateX(180deg);
+  z-index: 1; /* Turun z-index agar berada di belakang */
+  transition: transform 0.5s ease, z-index 0.1s ease 0.5s;
+}
+
+/* 2. Kertas surat terangkat keluar dari kantong amplop */
+.envelope.open .letter-paper {
+  transform: translateY(-120px); /* Terangkat ke atas */
+  height: 240px; /* Menjadi lebih panjang agar mudah dibaca */
+  z-index: 10; /* Naik ke Paling depan */
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s, z-index 0.1s ease 0.4s, height 0.5s ease 0.4s;
+}
+.secret-heart{background:none;border:0;font-size:100px;color:var(--pink);text-shadow:0 0 40px rgba(255,80,140,.55);cursor:pointer;animation:pulse 1.5s infinite;margin:20px}.secret-text{min-height:30px}
+.final-screen{background:radial-gradient(circle at 50% 45%,rgba(255,65,130,.2),transparent 35%),#09070d}.final-screen h2{font-size:46px}.final-message{max-width:330px;margin:0 auto 25px}.final-screen h3{letter-spacing:.12em}
+.music-player{position:fixed;z-index:50;bottom:14px;left:50%;transform:translateX(-50%);width:min(calc(100% - 28px),490px);background:rgba(18,13,22,.88);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(18px);border-radius:18px;padding:9px 12px;display:flex;align-items:center;gap:10px;box-shadow:0 15px 40px rgba(0,0,0,.4)}
+.disc{width:40px;height:40px;border-radius:50%;background:radial-gradient(circle,#f8e8ee 0 8%,#333 9% 18%,#111 19% 100%);display:grid;place-items:center;color:#fff;font-size:14px;flex:none}.disc.playing{animation:spin 3s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.track{min-width:0;flex:1}.track strong,.track small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.track strong{font-size:12px}.track small{font-size:9px;color:var(--muted)}#playBtn{border:0;width:40px;height:40px;border-radius:50%;background:#fff;color:#111;cursor:pointer}
+#hearts,.confetti{position:fixed;inset:0;pointer-events:none;z-index:20}.floating-heart{position:absolute;color:var(--pink);animation:rise 4s linear forwards}@keyframes rise{from{transform:translateY(30px) scale(.5);opacity:0}15%{opacity:1}to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+.conf{position:absolute;width:7px;height:12px;background:var(--rose);animation:fall 2.5s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+@media (min-width:700px){body{background:#050407}.app{box-shadow:0 0 100px rgba(0,0,0,.5)}}
