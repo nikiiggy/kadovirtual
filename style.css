@@ -372,3 +372,16 @@ h1 em,h2 em{background:linear-gradient(90deg,#ff8db2,#ffd1e3,#ffb347,#ff8db2);ba
 /* Music player menyala saat main */
 .music-player.playing{border-color:rgba(255,92,147,.6);box-shadow:0 0 30px rgba(255,92,147,.35),0 15px 40px rgba(0,0,0,.4)}
 .disc.playing{box-shadow:0 0 18px #ff5c93}
+
+./* Pengunci Ukuran Gambar Frame Polaroid */
+.photo-card {
+  overflow: hidden; /* Mencegah gambar keluar dari frame */
+}
+
+.photo-img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Membuat proporsi kotak presisi */
+  object-fit: cover;   /* Foto otomatis terpotong rapi tanpa gepeng/penyok */
+  border-radius: 8px;
+  display: block;
+}
