@@ -8,10 +8,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="progress"><i></i></div>
+  <div id="flash"></div>
+  <canvas id="fx"></canvas>
   <div id="hearts"></div>
   <div id="confetti"></div>
 
   <main class="app">
+    <div class="orbs"><i></i><i></i><i></i></div>
     <section id="opening" class="screen active">
       <div class="stars"></div>
       <div class="intro-content">
@@ -100,6 +104,7 @@
         <button class="reason"><b>09</b><span>Karena kamu adalah kamu.</span></button>
         <button class="reason special"><b>10</b><span>Dan karena aku nggak butuh alasan untuk mencintaimu. ❤️</span></button>
       </div>
+      <p class="hint" id="reasonHint">Tap setiap alasan untuk membukanya 👆</p>
       <button class="primary next">Tapi sekarang... main dulu 🎮</button>
     </section>
 
@@ -124,14 +129,14 @@
       <div class="center">
         <p class="eyebrow">MAKE A WISH</p>
         <h2>Waktunya tiup lilin 🎂</h2>
-        <div class="cake-wrap">
+        <div class="cake-wrap" id="cakeWrap">
           <div class="flame" id="flame">🔥</div>
           <div class="cake"><div class="icing"></div><div class="cake-body"></div></div>
         </div>
         <p id="wishText">Tekan tombolnya dan buat satu permintaan.</p>
         <button class="primary" id="wishBtn">Tiup Lilinnya ✨</button>
-        
-        <!-- Tambahkan tombol ini di bawah wishlist -->
+        <br>
+        <button class="primary" id="micBtn" style="margin-top:12px">🎤 Atau tiup beneran pakai mic</button>
         <br><br>
         <button class="primary next">Lanjut ke surat →</button>
       </div>
@@ -172,7 +177,7 @@
         <p>Berarti kamu memang penasaran. Jadi aku kasih satu rahasia kecil.</p>
         <button class="secret-heart" id="secretHeart">♥</button>
         <p id="secretText" class="secret-text">Tekan hatinya 5 kali...</p>
-        <button class="primary next" id="finalBtn">Aku siap →</button>
+        <button class="primary" id="finalBtn" disabled>Aku siap →</button>
       </div>
     </section>
 
